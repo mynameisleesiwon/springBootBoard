@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 상세보기</title>
+</head>
+<style>
+    .layout {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    h1, p, .btn, .image {
+        text-align: center;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+</style>
+<body>
+<div class="layout">
+    <div>
+        <h1 th:text="${detail.title}">제목입니다.</h1>
+    </div>
+    <hr>
+    <div class="content">
+        <p th:text="${detail.content}">내용이 들어갈 부분입니다.</p>
+    </div>
+    <hr>
+    <div class="image">
+        <img alt="업로드한 사진이 없습니다." th:src="${detail.filepath}">
+    </div>
+    <hr>
+    <div class="btn">
+        <button><a th:href="@{/board/delete(id=${detail.id})}">글삭제</a></button>
+        <button><a th:href="@{/board/modify/{id}(id=${detail.id})}">수정하기</a></button>
+        <button><a th:href="@{/board/list}">뒤로 가기</a></button>
+    </div>
+</div>
+</body>
+</html>

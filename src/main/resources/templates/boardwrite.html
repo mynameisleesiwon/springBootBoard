@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 작성</title>
+</head>
+<style>
+    .layout {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .layout input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .layout textarea {
+        width: 100%;
+        margin-top: 10px;
+        min-height: 300px;
+    }
+
+
+    .write, .back {
+        text-align: center;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .title, .content {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="layout">
+    <form action="/board/writepro" enctype="multipart/form-data" method="post">
+        <div class="title">
+            <input name="title" type="text">
+        </div>
+        <hr>
+        <div class="content">
+            <textarea name="content"></textarea>
+        </div>
+        <div class="upload">
+            <input name="file" type="file">
+        </div>
+        <hr>
+        <div class="write">
+            <button type="submit"><a>작성</a></button>
+        </div>
+    </form>
+    <div class="back">
+        <button><a th:href="@{/board/list}">뒤로 가기</a></button>
+    </div>
+</div>
+</body>
+</html>

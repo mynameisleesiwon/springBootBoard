@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메세지 띄우기</title>
+</head>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    let message = [[${message}]];
+    alert(message);
+    location.replace([[${searchUrl}]]);
+    /*]]>*/
+</script>
+<body>
+
+</body>
+</html>

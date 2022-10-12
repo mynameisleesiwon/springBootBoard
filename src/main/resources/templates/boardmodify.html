@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+</head>
+<style>
+    .layout {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .layout input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .layout textarea {
+        width: 100%;
+        margin-top: 10px;
+        min-height: 300px;
+    }
+
+
+    .btn {
+        text-align: center;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .title, .content {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="layout">
+    <form method="post" th:action="@{/board/update/{id}(id=${board.id})}">
+        <div class="title">
+            <input name="title" th:value="${board.title}" type="text">
+        </div>
+        <hr>
+        <div class="content">
+            <textarea name="content" th:text="${board.content}"></textarea>
+        </div>
+        <hr>
+        <div class="btn">
+            <button type="submit"><a>수정</a></button>
+            <button><a th:href="@{/board/detail(id=${board.id})}">뒤로 가기</a></button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
